@@ -1,0 +1,313 @@
+@import "../../vars.scss";
+
+.rules{
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+
+  .rules__quest_left{
+    left: 20px;
+    top: -69px;
+    position: absolute;
+
+    @media screen and (max-width: 1150px) {
+      height: 90%;
+      left: 10%;
+      top: 5%;
+    }
+
+    @media screen and (max-width: 1010px) {
+      height: 80%;
+      left: 3%;
+      top: 5%;
+    }
+
+    @media screen and (max-width: 870px) {
+      height: 60%;
+      left: 7%;
+      top: 19%;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .rules__quest_right{
+    right: 20px;
+    top: -69px;
+    position: absolute;
+
+    @media screen and (max-width: 1150px) {
+      height: 90%;
+      right: 10%;
+      top: 6%;
+    }
+
+    @media screen and (max-width: 1010px) {
+      height: 80%;
+      right: 3%;
+      top: 8%;
+    }
+
+    @media screen and (max-width: 870px) {
+      height: 60%;
+      right: 7%;
+      top: 20%;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .rules__content{
+    z-index: 10;
+    @include classicDiv(column);
+    margin-top: 88px;
+
+    @media screen and (max-width: 700px) {
+      margin-top: 38px;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-top: 58px;
+    }
+  }
+
+  .rules__subheader{
+    @include classicText($fs21, $lhClassic, $whiteColor, center);
+    letter-spacing: 3.5px;
+
+    @media screen and (max-width: 1150px) {
+      @include classicText(15px, 21px, $whiteColor, center);
+      letter-spacing: 2px;
+    }
+
+    @media screen and (max-width: 700px) {
+      @include classicText(15px, 21px, $whiteColor, center);
+      letter-spacing: 2px;
+      max-width: 80%;
+    }
+
+    @media screen and (max-width: 600px) {
+      @include classicText(12px, 19px, $whiteColor, center);
+      letter-spacing: 1.5px;
+      max-width: 70%;
+    }
+  }
+  .girl{
+    @include classicText($fs120, $lhClassic, $whiteColor, center);
+    letter-spacing: 3px;
+    position: relative;
+    margin-top: 70px;
+
+    @media screen and (max-width: 1150px) {
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 400px) {
+      margin-top: 20px;
+    }
+
+    .girl__header{
+
+      @media screen and (max-width: 1150px) {
+        @include classicText(90px, 120px, $whiteColor, center);
+      }
+
+      @media screen and (max-width: 870px) {
+        @include classicText(60px, 80px, $whiteColor, center);
+      }
+
+      @media screen and (max-width: 600px) {
+        @include classicText(40px, 60px, $whiteColor, center);
+      }
+    }
+
+    .girl__header_clever{
+      color: $yellowColor;
+    }
+
+    .girl__header_and{
+      color: $violetColor;
+    }
+
+    .girl__header_beauty{
+      color: $pinkColor;
+    }
+
+    .girl__img{
+      position: absolute;
+    }
+
+    .girl__img_left{
+      left: 183px;
+      top: -50px;
+
+      @media screen and (max-width: 1150px) {
+        width: 5%;
+        left: 137px;
+        top: 1px;
+      }
+
+      @media screen and (max-width: 870px) {
+        width: 4%;
+        left: 186px;
+        top: -10px;
+      }
+    }
+
+    .girl__img_right{
+      right: 462px;
+      top: -26px;
+
+      @media screen and (max-width: 1150px) {
+        width: 5%;
+        right: 352px;
+        top: 27px;
+      }
+
+      @media screen and (max-width: 870px) {
+        width: 4%;
+        right: 171px;
+        top: 18px;
+      }
+    }
+  }
+
+.lists{
+  display: grid;
+  margin-top: 70px;
+  grid-template-columns: max-content 48px 1fr;
+  grid-template-rows: 1fr;
+  justify-content: start;
+  justify-self: flex-start;
+  position: relative;
+  width: 98%;
+
+  @media screen and (max-width: 1150px) {
+    grid-template-columns: 300px 88px 300px;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 870px) {
+    grid-template-columns: 300px 64px 300px;
+  }
+
+  @media screen and (max-width: 680px) {
+    grid-template-columns: 40% 7% 45%;
+  }
+}
+
+.list{
+  @include classicDiv(column);
+
+  gap: 10px;
+  list-style-type: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-self: flex-start;
+
+  @media screen and (max-width: 800px) {
+    align-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: 280px;
+    width: 100%;
+  }
+}
+
+.list__left{
+  grid-column: 1/2;
+
+  @media screen and (max-width: 870px) {
+    padding-left: 33%;
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: 800px) {
+    padding-left: 0;
+  }
+}
+
+.list__right{
+  grid-column: 3/4;
+}
+
+.list__item{
+  @include classicText($fs15, 20px, $blackColor, left);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  background-color: $yellowColor;
+
+  @media screen and (max-width: 870px) {
+    @include classicText(9px, 11px, $blackColor, left);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background-color: $yellowColor;
+  }
+}
+
+.list__item_right{
+  background-color: $pinkColor;
+  color: white;
+}
+
+.list__item_link {
+  @include classicText($fs15, 20px, $blackColor, left);
+  font-weight: bold;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  
+  &:hover {
+    opacity: .8;
+  }
+
+  @media screen and (max-width: 870px) {
+    @include classicText(9px, 11px, $blackColor, left);
+    font-weight: bold;
+  }
+}
+
+.list__item_linkSecond{
+  color: $whiteColor;
+}
+}
+
+.button{
+  all: unset;
+  @include classicText($fs21, $lh41, $whiteColor, center);
+  background-color: $pinkColor;
+  padding: 7px 25px 7px 25px;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 35px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  
+  &:hover {
+    opacity: .8;
+  }
+
+  @media screen and (max-width: 770px) {
+    @include classicText(15px, 20px, $whiteColor, center);
+    bottom: 25px;
+    padding: 7px 25px 7px 25px;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../vars.scss";
+
+.popuptop{
+  position: absolute;
+  right: 2px;
+  top: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: end;
+  align-items: end;
+  justify-items: end;
+  align-items: start;
+
+  @media screen and (max-width: 770px) {
+    display: none;
+  }
+}
+
+.popuptop__img{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.popuptop__text{
+  font-family: 'PT Sans', Arial, sans-serif;
+  position: absolute;
+  top: 21px;
+  right: 6px;
+  @include classicText(28px, 28px, $pinkColor, center);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  max-width: 90px;
+  word-wrap: break-word;
+  transform: rotate(-15deg);
+  font-weight: bold;
+}
+
+.popuptop__img_bottom{
+  top: -24px;
+  right: -29px;
+}
+
+.popuptop__img_top{
+  right: -4px;
+}
+

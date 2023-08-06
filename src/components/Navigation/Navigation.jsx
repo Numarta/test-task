@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import accountimage from '../../images/headericon.svg';
-
 import styles from './Navigation.module.scss';
 
-const Navigation = ({ pathname, logedIn }) => {
+const Navigation = ({ pathname }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const clickBurger = () => {
@@ -18,103 +16,71 @@ const Navigation = ({ pathname, logedIn }) => {
 
   return (
     <>
-      {!logedIn ? (
-        <div className={styles.notsignedmenu}>
-          <Link to="/signup" className={`${styles.button} ${styles.button_signup}`}>
-            Регистрация
-          </Link>
-          <Link to="/signin" className={`${styles.button} ${styles.button_login}`}>
-            Войти
-          </Link>
-        </div>
-      ) : (
-        <div className={styles.menu}>
-          <nav className={`${styles.nav} ${isBurgerOpen && styles.nav_active}`}>
-            <nav className={`${styles.nav__toplinks}`}>
-              <Link
-                onClick={chooseMenuItem}
-                to="/"
-                className={`${styles.menu__link} ${
-                  pathname === '/' && styles.menu__link_topactive
-                } ${styles.menu__toplink_main}`}>
-                Главная
-              </Link>
+      <div className={styles.menu}>
+        <Link
+          to="/"
+          className={`${styles.menu__button} ${styles.menu__button_main} ${
+            pathname === '/' ? styles.menu__button_active : ''
+          }`}>
+          о май гад
+        </Link>
+        <Link
+          to="/rules"
+          className={`${styles.menu__button} ${styles.menu__button_rules} ${
+            pathname === '/rules' ? styles.menu__button_active : ''
+          }`}>
+          правила
+        </Link>
+        <Link
+          to="/winners"
+          className={`${styles.menu__button} ${styles.menu__button_winners} ${
+            pathname === '/winners' ? styles.menu__button_active : ''
+          }`}>
+          победители
+        </Link>
+      </div>
 
-              <Link
-                to="/movies"
-                onClick={chooseMenuItem}
-                className={`${styles.menu__link} ${
-                  pathname === '/movies' && styles.menu__link_topactive
-                } ${styles.menu__toplink_films}`}>
-                Фильмы
-              </Link>
-
-              <Link
-                to="/saved-movies"
-                onClick={chooseMenuItem}
-                className={`${styles.menu__link} ${
-                  pathname === '/saved-movies' && styles.menu__link_topactive
-                } ${styles.menu__toplink_saved}`}>
-                Сохраненные фильмы
-              </Link>
-            </nav>
-
-            <nav className={`${styles.nav__bottomlinks}`}>
-              <Link
-                to="/profile"
-                onClick={chooseMenuItem}
-                className={`${styles.menu__link} ${
-                  pathname === '/profile' && styles.menu__link_bottomactive
-                } ${styles.menu__link_bottomprofile}`}>
-                <p className={styles.menu__text}>Аккаунт</p>
-                <img
-                  className={styles.menu__image}
-                  src={accountimage}
-                  alt="переход к профилю пользователю"></img>
-              </Link>
-            </nav>
-          </nav>
-
-          <div className={`${styles.blackout} ${isBurgerOpen && styles.blackout_active}`}></div>
-
-          <nav className={styles.menu__links}>
+      <div className={styles.menu__mobile}>
+        <nav className={`${styles.nav} ${isBurgerOpen && styles.nav_active}`}>
+          <nav className={`${styles.nav__toplinks}`}>
             <Link
-              to="/movies"
-              className={`${styles.menu__link} ${
-                pathname === '/movies' && styles.menu__link_active
-              } ${styles.menu__link_films}`}>
-              Фильмы
+              onClick={chooseMenuItem}
+              to="/"
+              className={`${styles.menu__link} ${pathname === '/' && styles.menu__link_topactive} ${
+                styles.menu__toplink_main
+              }`}>
+              О МАЙ ГАД
             </Link>
 
             <Link
-              to="/saved-movies"
+              to="/rules"
+              onClick={chooseMenuItem}
               className={`${styles.menu__link} ${
-                pathname === '/saved-movies' && styles.menu__link_active
-              } ${styles.menu__link_saved}`}>
-              Сохраненные фильмы
+                pathname === '/rules' && styles.menu__link_topactive
+              } ${styles.menu__toplink_films}`}>
+              ПРАВИЛА
             </Link>
 
             <Link
-              to="/profile"
+              to="/winners"
+              onClick={chooseMenuItem}
               className={`${styles.menu__link} ${
-                pathname === '/profile' && styles.menu__link_active
-              } ${styles.menu__link_profile}`}>
-              Аккаунт
-              <img
-                className={styles.menu__image}
-                src={accountimage}
-                alt="переход к профилю пользователю"></img>
+                pathname === '/winners' && styles.menu__link_topactive
+              } ${styles.menu__toplink_saved}`}>
+              ПОБЕДИТЕЛИ
             </Link>
           </nav>
+        </nav>
 
-          <button
-            onClick={clickBurger}
-            type="button"
-            className={`${styles.menu__burger} ${isBurgerOpen && styles.menu__burger_active}`}>
-            <span className={styles.menu__lines}></span>
-          </button>
-        </div>
-      )}
+        <div className={`${styles.blackout} ${isBurgerOpen && styles.blackout_active}`}></div>
+
+        <button
+          onClick={clickBurger}
+          type="button"
+          className={`${styles.menu__burger} ${isBurgerOpen && styles.menu__burger_active}`}>
+          <span className={styles.menu__lines}></span>
+        </button>
+      </div>
     </>
   );
 };

@@ -1,26 +1,19 @@
 @import url('../../vendor/fonts/fonts.css');
 
-// body {
-//   margin: 0;
-//   font-family: 'Inter', Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   -webkit-text-size-adjust: 100%;
-//   -ms-text-size-adjust: 100%;
-//   -moz-text-size-adjust: 100%;
-//   text-rendering: optimizeLegibility;
-// }
-
 .app {
   display: flex;
   flex-direction: column;
+  background: url('../../images/background.png');
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
   margin: 0 auto;
-  box-sizing: border-box;
   justify-content: space-between;
   align-content: flex-start;
   align-items: center;
 
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'PT Sans', "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -28,5 +21,12 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 
+  position: relative;
+  overflow: hidden;
+  background: url('../../images/background.png');
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
 }
-
